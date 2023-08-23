@@ -1,21 +1,18 @@
 "use client"
 
+import { useEffect } from 'react'
+import '@staticcms/core/dist/main.css';
 import CMS from '@staticcms/core';
 import identity from 'netlify-identity-widget';
-import { useEffect } from 'react'
 
-import '@staticcms/core/dist/main.css';
-
-export default function Admin({ id }: { id: string }) {
+export default function Admin() {
     useEffect(() => {
-        (window as any).netlifyIdentity = identity;
-        identity.init({})
         CMS.init({
             config: {
                 backend: {
                     name: 'git-gateway',
                     branch: 'master',
-                    gateway_url: `https://staticcms.netlify.app/${id}.netlify/git/github`
+                    gateway_url: `https://staticcms.netlify.app/.netlify/git/github`
                 },
                 media_folder: 'public/uploads',
                 public_folder: '/uploads',
@@ -32,9 +29,12 @@ export default function Admin({ id }: { id: string }) {
                     }
                 ]
             }
-        })
+        });
 
-    }, [id])
+        (window as any).netlifyIdentity = identity;
+        identity.init({});
+
+    }, [])
 
     return <></>
 
