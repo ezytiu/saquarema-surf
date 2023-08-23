@@ -13,7 +13,7 @@ interface PageProps {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const id = await getId(params.slug)
+  const id = getId(params.slug)
   const settings = await get(id, "settings")
 
   return {
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default function Pager(props: PageProps) {
+export default function Page(props: PageProps) {
   const id = getId(props.params.slug)
 
   return <>
