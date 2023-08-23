@@ -2,8 +2,9 @@
 
 import CMS from '@staticcms/core';
 import identity from 'netlify-identity-widget';
-import '@staticcms/core/dist/main.css';
 import { useEffect } from 'react'
+
+import '@staticcms/core/dist/main.css';
 
 export default function Admin({ id }: { id: string }) {
     useEffect(() => {
@@ -33,7 +34,7 @@ export default function Admin({ id }: { id: string }) {
             }
         })
 
-    }, [])
+    }, [id])
 
     return <></>
 
