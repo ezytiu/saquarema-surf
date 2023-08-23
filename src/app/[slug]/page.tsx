@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { Suspense } from "react";
 import { get } from "../services/content";
 import { getId } from "../services/getId";
-import Template from "./components/Template";
+import Template from "../../components/Template";
 
 export const runtime = 'edge';
 

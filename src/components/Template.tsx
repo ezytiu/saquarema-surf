@@ -1,5 +1,3 @@
-"use client"
-
 import React, { Suspense } from 'react'
 import { Menu } from './Menu'
 import { image } from '@/app/services/content'
