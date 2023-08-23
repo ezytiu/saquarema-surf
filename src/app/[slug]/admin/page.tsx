@@ -1,9 +1,7 @@
 import { getId } from '@/app/services/getId';
 import '@staticcms/core/dist/main.css';
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
-
-export const runtime = 'edge';
 
 const Admin = dynamic(() => import('./components/Admin'), { ssr: false })
 
@@ -13,8 +11,8 @@ interface PageProps {
     }
 }
 
-export default async function Page(props: PageProps) {
-    const id = await getId(props.params.slug)
+export default function Page(props: PageProps) {
+    const id = getId(props.params.slug)
 
     return <>
         <Suspense fallback={<div>Carregando...</div>}>

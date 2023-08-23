@@ -5,4 +5,4 @@ const rotas = {
     "teste2": "OZ8KuDirYEg94llqAhwmzMiEVkq1"
 }
 
-export const getId = async (username: string) => rotas[username as keyof typeof rotas]
+export const getId = (username: string) => rotas[username as keyof typeof rotas]

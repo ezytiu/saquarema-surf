@@ -22,8 +22,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default async function Pager(props: PageProps) {
-  const id = await getId(props.params.slug)
+export default function Pager(props: PageProps) {
+  const id = getId(props.params.slug)
 
   return <>
       <Suspense fallback={<div>Carregando...</div>}>
