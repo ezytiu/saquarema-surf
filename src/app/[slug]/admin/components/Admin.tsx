@@ -5,7 +5,7 @@ import identity from 'netlify-identity-widget';
 import '@staticcms/core/dist/main.css';
 import { useEffect } from 'react'
 
-export default function AdminPage() {
+export default function useAdmin({ id }: { id: string }) {
     useEffect(() => {
         (window as any).netlifyIdentity = identity;
         identity.init({})
@@ -14,7 +14,7 @@ export default function AdminPage() {
                 backend: {
                     name: 'git-gateway',
                     branch: 'master',
-                    gateway_url: 'https://staticcms.netlify.app/.netlify/git/github'
+                    gateway_url: `https://staticcms.netlify.app/${id}.netlify/git/github`
                 },
                 media_folder: 'public/uploads',
                 public_folder: '/uploads',
@@ -36,4 +36,5 @@ export default function AdminPage() {
     }, [])
 
     return <></>
+
 }
