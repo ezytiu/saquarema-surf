@@ -5,7 +5,7 @@ import identity from 'netlify-identity-widget';
 import '@staticcms/core/dist/main.css';
 import { useEffect } from 'react'
 
-export default function useAdmin({ id }: { id: string }) {
+export default function Admin({ id }: { id: string }) {
     useEffect(() => {
         (window as any).netlifyIdentity = identity;
         identity.init({})
